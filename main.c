@@ -30,7 +30,7 @@
 #define NUMBER_OF_LINES 2
 #define POPULATION_SIZE 50 // Population sizd must be even
 #define MULTIPLICITY_STRING_REP 10
-#define NUMBER_OF_GENERATIONS 1
+#define NUMBER_OF_GENERATIONS 20000
 
 // Katsayılar sonrasında öneme göre değişecek
 #define W1 0.5
