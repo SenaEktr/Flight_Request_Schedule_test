@@ -14,10 +14,10 @@
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
 
-#define MAX_LINE_LENGTH 256
+#define MAX_LINE_LENGTH 512
 #define MUTATION_RATE 0.15 // %10 mutasyon oranı
-#define NUMBER_OF_NODES 1243
-#define NUMBER_OF_EDGES 9138
+#define NUMBER_OF_NODES 2690
+#define NUMBER_OF_EDGES 18066
 #define MAX_TIME_STRING_LENGTH 9
 
 
@@ -26,14 +26,14 @@
 // store alternative path's for the OD's
 #define MAX_NUMBER_OF_EDGES_IN_ROUTE 100
 #define NUMBER_OF_ALTERNATIVES 5
-#define NUMBER_OF_ODS 11 * 14
+#define NUMBER_OF_ODS 8 * 12
 
 // store the edge matrix
 #define NUMBER_OF_TIME_INTERVALS 1200
 #define NUMBER_OF_LINES 2
 #define POPULATION_SIZE 50 // Population sizd must be even
 #define MULTIPLICITY_STRING_REP 10
-#define NUMBER_OF_GENERATIONS 20000
+#define NUMBER_OF_GENERATIONS 1
 
 // Katsayılar sonrasında öneme göre değişecek
 #define W1 0.5
@@ -2881,7 +2881,7 @@ int main()
     timeinfo = localtime(&rawtime);
 
     // outputs_HH_MM_SS formatında klasör ismi oluştur
-    strftime(folder_name, sizeof(folder_name), "outputs_%H_%M_%S", timeinfo);
+    strftime(folder_name, sizeof(folder_name), "large_outputs_%H_%M_%S", timeinfo);
 
     // mkdir ile klasörü oluştur
     if (mkdir(folder_name, 0777) == 0)
@@ -2899,18 +2899,18 @@ int main()
 
 
     const char* small_demand_files[] = {
-        "demands_small_scale/demands_4_6.txt",
-        "demands_small_scale/demands_4_12.txt",
-        "demands_small_scale/demands_8_6.txt",
-        "demands_small_scale/demands_8_12.txt"
+        // "demands_large_scale/demands_4_6.txt",
+        // "demands_large_scale/demands_4_12.txt",
+        // "demands_large_scale/demands_8_6.txt",
+        "demands_large_scale/demands_8_12.txt"
     };
 
     const char* small_sim_versions[] = {
-        "shortest_path_management/formatted_paths/formatted_output_small_sim1.txt",
-        "shortest_path_management/formatted_paths/formatted_output_small_sim2.txt"
+        "shortest_path_management/formatted_paths/formatted_output_large_sim1.txt",
+        "shortest_path_management/formatted_paths/formatted_output_large_sim2.txt"
     };
 
-    const char* small_edge_file = "9138_1243_ist_small_scale.txt";  // sabit veya kullanılmayacaksa NULL olabilir
+    const char* small_edge_file = "18066_2690_ist_large_scale.txt";  // sabit veya kullanılmayacaksa NULL olabilir
 
     for (int i = 0; i < sizeof(small_demand_files) / sizeof(small_demand_files[0]); i++) {
         for (int j = 0; j < sizeof(small_sim_versions) / sizeof(small_sim_versions[0]); j++) {
