@@ -2899,9 +2899,9 @@ int main()
 
 
     const char* small_demand_files[] = {
-        // "demands_large_scale/demands_4_6.txt",
-        // "demands_large_scale/demands_4_12.txt",
-        // "demands_large_scale/demands_8_6.txt",
+        "demands_large_scale/demands_4_6.txt",
+        "demands_large_scale/demands_4_12.txt",
+        "demands_large_scale/demands_8_6.txt",
         "demands_large_scale/demands_8_12.txt"
     };
 
