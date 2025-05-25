@@ -33,7 +33,7 @@
 #define NUMBER_OF_LINES 2
 #define POPULATION_SIZE 50 // Population sizd must be even
 #define MULTIPLICITY_STRING_REP 10
-#define NUMBER_OF_GENERATIONS 20000
+#define NUMBER_OF_GENERATIONS 1
 
 // Katsayılar sonrasında öneme göre değişecek
 #define W1 0.5
@@ -2899,15 +2899,15 @@ int main()
 
 
     const char* small_demand_files[] = {
-        "demands_large_scale/demands_4_6.txt",
-        "demands_large_scale/demands_4_12.txt",
+        // "demands_large_scale/demands_4_6.txt",
+        // "demands_large_scale/demands_4_12.txt",
         "demands_large_scale/demands_8_6.txt",
         "demands_large_scale/demands_8_12.txt"
     };
 
     const char* small_sim_versions[] = {
-        "shortest_path_management/formatted_paths/formatted_output_large_sim1.txt",
-        "shortest_path_management/formatted_paths/formatted_output_large_sim2.txt"
+        "shortest_path_management/formatted_paths/formatted_output_large_sim1.txt"
+        // "shortest_path_management/formatted_paths/formatted_output_large_sim2.txt"
     };
 
     const char* small_edge_file = "18066_2690_ist_large_scale.txt";  // sabit veya kullanılmayacaksa NULL olabilir
@@ -2916,12 +2916,12 @@ int main()
         for (int j = 0; j < sizeof(small_sim_versions) / sizeof(small_sim_versions[0]); j++) {
             init_test(small_edge_file, small_demand_files[i], small_sim_versions[j]);
 
-            for (int crossover_type = 0; crossover_type < CROSSOVER_TYPE; crossover_type++)
+            for (int crossover_type = 1; crossover_type < CROSSOVER_TYPE; crossover_type++)
             {
-                for (int mutation_type = 0; mutation_type < MUTATION_TYPE; mutation_type++)
+                for (int mutation_type = 0; mutation_type < MUTATION_TYPE; mutation_type+=2)
                 {
                     char filename[100];
-                    sprintf(filename, "%s/outputs_sim%d_demand_%d_%d_%d.txt", folder_name, j + 1, i + 1, crossover_type, mutation_type);
+                    sprintf(filename, "%s/outputs_sim%d_demand_%d_%d_%d.txt", folder_name, j + 1, i + 3, crossover_type, mutation_type);
                     freopen(filename, "a", stdout); // Redirect stdout to the file
                     printf("Crossover Type: %d, Mutation Type: %d\n", crossover_type, mutation_type);
                     // Call the test function to run the simulation
