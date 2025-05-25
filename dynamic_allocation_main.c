@@ -29,7 +29,7 @@
 #define NUMBER_OF_ODS 8 * 12
 
 // store the edge matrix
-#define NUMBER_OF_TIME_INTERVALS 1200
+#define NUMBER_OF_TIME_INTERVALS 480
 #define NUMBER_OF_LINES 2
 #define POPULATION_SIZE 50 // Population sizd must be even
 #define MULTIPLICITY_STRING_REP 10
