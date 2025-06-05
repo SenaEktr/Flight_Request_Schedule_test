@@ -20,7 +20,6 @@
 #define NUMBER_OF_EDGES 18066
 #define MAX_TIME_STRING_LENGTH 9
 
-
 #define NUMBER_OF_LANES 2
 
 // store alternative path's for the OD's
