@@ -2915,10 +2915,14 @@ int main()
         for (int j = 0; j < sizeof(small_sim_versions) / sizeof(small_sim_versions[0]); j++) {
             init_test(small_edge_file, small_demand_files[i], small_sim_versions[j]);
 
-            for (int crossover_type = 1; crossover_type < CROSSOVER_TYPE; crossover_type++)
+            for (int crossover_type = 0; crossover_type < CROSSOVER_TYPE; crossover_type++)
             {
                 for (int mutation_type = 0; mutation_type < MUTATION_TYPE; mutation_type+=2)
                 {
+                    if(crossover_type == 0 && mutation_type == 2) {
+                        continue; 
+                    }
+
                     char filename[100];
                     sprintf(filename, "%s/outputs_sim%d_demand_%d_%d_%d.txt", folder_name, j + 1, i + 3, crossover_type, mutation_type);
                     freopen(filename, "a", stdout); // Redirect stdout to the file
