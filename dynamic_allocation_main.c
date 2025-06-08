@@ -35,9 +35,9 @@
 #define NUMBER_OF_GENERATIONS 20000
 
 // Katsayılar sonrasında öneme göre değişecek
-#define W1 0.5
-#define W2 0.5
-#define W3 0.5
+#define W1 0.2
+#define W2 0.4
+#define W3 0.4
 #define PENALTY 10
 
 #define CROSSOVER_TYPE 3 // 0: order, 1: problem specific, 2: similarity crossover minimize conflict, 3: similarity crossover fitness related
